@@ -7,16 +7,28 @@ import { CardTypeModule } from './card_type/card_type.module';
 import { CardSubTypeModule } from './card_sub_type/card_sub_type.module';
 import { CardStatisticsModule } from './card_statistics/card_statistics.module';
 import { CommonModule } from './common/common.module';
+import { SeedModule } from './seed/seed.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
-      port: 3307,
-      username: 'root',
-      password: '123456',
-      database: 'yugioh_db',
+      host: process.env.DB_HOST,
+      port: +process.env.DB_PORT!,
+      username: process.env.DB_USERNAME,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_NAME,
+      extra: {
+        // Si falla en local, comentar todo esto
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      },
+
       autoLoadEntities: true,
       synchronize: true,
     }),
@@ -25,6 +37,7 @@ import { CommonModule } from './common/common.module';
     CardSubTypeModule,
     CardStatisticsModule,
     CommonModule,
+    SeedModule,
   ],
   controllers: [AppController],
   providers: [AppService],
