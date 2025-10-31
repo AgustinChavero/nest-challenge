@@ -4,7 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CardModule } from './card/card.module';
 import { CardTypeModule } from './card_type/card_type.module';
-import { CardSubtypeModule } from './card_subtype/card_subtype.module';
+import { CardSubTypeModule } from './card_sub_type/card_sub_type.module';
 import { CardStatisticsModule } from './card_statistics/card_statistics.module';
 import { CommonModule } from './common/common.module';
 
@@ -22,7 +22,7 @@ import { CommonModule } from './common/common.module';
     }),
     CardModule,
     CardTypeModule,
-    CardSubtypeModule,
+    CardSubTypeModule,
     CardStatisticsModule,
     CommonModule,
   ],
