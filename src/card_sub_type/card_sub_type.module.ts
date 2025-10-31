@@ -1,16 +1,16 @@
 import { forwardRef, Module } from '@nestjs/common';
-import { CardService } from './card.service';
-import { CardController } from './card.controller';
+import { CardSubTypeController } from './card_sub_type.controller';
+import { CardSubTypeService } from './card_sub_type.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CommonModule } from 'src/common/common.module';
-import { CardEntity } from './entities/card.entity';
+import { CardEntity } from 'src/card/entities/card.entity';
 import { CardTypeEntity } from 'src/card_type/entities/card_type.entity';
-import { CardSubTypeEntity } from 'src/card_sub_type/entities/card_subtype.entity';
+import { CardSubTypeEntity } from './entities/card_subtype.entity';
 import { CardStatisticsEntity } from 'src/card_statistics/entities/card_statistics.entity';
 
 @Module({
-  providers: [CardService],
-  controllers: [CardController],
+  controllers: [CardSubTypeController],
+  providers: [CardSubTypeService],
   imports: [
     TypeOrmModule.forFeature([
       CardEntity,
@@ -22,4 +22,4 @@ import { CardStatisticsEntity } from 'src/card_statistics/entities/card_statisti
   ],
   exports: [TypeOrmModule],
 })
-export class CardModule {}
+export class CardSubTypeModule {}
