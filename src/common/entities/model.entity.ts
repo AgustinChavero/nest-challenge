@@ -3,6 +3,7 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  DeleteDateColumn,
 } from 'typeorm';
 
 @Entity()
@@ -15,4 +16,7 @@ export class ModelEntity {
 
   @UpdateDateColumn({ type: 'timestamp', name: 'updated_at', nullable: true })
   updated_at: Date;
+
+  @DeleteDateColumn({ type: 'timestamp', name: 'deleted_at', nullable: true })
+  deleted_at: Date;
 }

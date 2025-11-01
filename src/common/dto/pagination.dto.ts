@@ -14,12 +14,4 @@ export class PaginationDto {
   @IsNumber()
   @Min(0)
   offset?: number;
-
-  @IsOptional()
-  @IsUUID()
-  id?: string;
-
-  @IsOptional()
-  @IsUUID()
-  type_id?: string;
 }
