@@ -5,7 +5,7 @@ import { Column, Entity, OneToMany } from 'typeorm';
 
 @Entity({ name: 'card_types' })
 export class CardTypeEntity extends ModelEntity {
-  @Column('text')
+  @Column('varchar', { length: 50, unique: true })
   name: string;
 
   @OneToMany(() => CardSubTypeEntity, (card) => card.card_type)

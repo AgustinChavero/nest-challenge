@@ -6,41 +6,35 @@ import { CardStatisticsEntity } from 'src/card_statistics/entities/card_statisti
 
 @Entity({ name: 'cards' })
 export class CardEntity extends ModelEntity {
-  @ManyToOne(() => CardTypeEntity, {
+  @ManyToOne(() => CardTypeEntity, (type) => type.cards, {
     nullable: false,
     onDelete: 'CASCADE',
-    eager: true,
   })
   @JoinColumn({ name: 'card_type_id' })
   card_type: CardTypeEntity;
 
-  @ManyToOne(() => CardSubTypeEntity, {
+  @ManyToOne(() => CardSubTypeEntity, (subtype) => subtype.cards, {
     nullable: false,
     onDelete: 'CASCADE',
-    eager: true,
   })
   @JoinColumn({ name: 'card_sub_type_id' })
   card_sub_type: CardSubTypeEntity;
 
   @OneToOne(() => CardStatisticsEntity, (stats) => stats.card, {
     nullable: true,
-    eager: true,
     cascade: true,
   })
   statistics?: CardStatisticsEntity;
 
-  @Column('text')
+  @Column('varchar', { length: 50, unique: true })
   name: string;
 
-  @Column('text')
+  @Column('varchar', { length: 7, unique: true })
   code: string;
 
-  @Column('text')
+  @Column('varchar', { length: 255 })
   description: string;
 
-  @Column('text')
+  @Column('varchar', { length: 255 })
   image_url?: string;
-
-  @Column('boolean', { default: true })
-  enabled?: boolean;
 }

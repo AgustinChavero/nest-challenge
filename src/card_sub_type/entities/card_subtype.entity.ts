@@ -8,12 +8,11 @@ export class CardSubTypeEntity extends ModelEntity {
   @ManyToOne(() => CardTypeEntity, {
     nullable: false,
     onDelete: 'CASCADE',
-    eager: true,
   })
   @JoinColumn({ name: 'card_type_id' })
   card_type: CardTypeEntity;
 
-  @Column('text')
+  @Column('varchar', { length: 50, unique: true })
   name: string;
 
   @OneToMany(() => CardEntity, (card) => card.card_sub_type)
