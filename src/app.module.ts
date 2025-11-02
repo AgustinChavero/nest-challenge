@@ -28,7 +28,6 @@ import { ConfigModule } from '@nestjs/config';
           rejectUnauthorized: false,
         },
       },
-
       autoLoadEntities: true,
       synchronize: true,
     }),
