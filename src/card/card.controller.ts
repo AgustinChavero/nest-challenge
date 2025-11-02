@@ -10,7 +10,6 @@ import {
   Query,
 } from '@nestjs/common';
 import { CardService } from './card.service';
-import { PaginationDto } from 'src/common/dto/pagination.dto';
 import { FindCardDto } from './dto/find-card.dto';
 import { CreateCardDto } from './dto/create-card.dto';
 import { UpdateCardDto } from './dto/update-card.dto';
