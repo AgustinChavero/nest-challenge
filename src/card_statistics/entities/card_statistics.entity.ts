@@ -11,12 +11,12 @@ export class CardStatisticsEntity extends ModelEntity {
   @JoinColumn({ name: 'card_id' })
   card: CardEntity;
 
-  @Column('int', { nullable: true })
+  @Column('int')
   attack: number;
 
-  @Column('int', { nullable: true })
+  @Column('int')
   defense: number;
 
-  @Column('int', { nullable: true })
+  @Column('int')
   stars?: number;
 }
