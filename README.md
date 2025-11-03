@@ -458,10 +458,11 @@ El proyecto sigue principios de **Clean Architecture**:
 
 ### Requisitos Opcionales ✅
 
+- ✅ Filtros
 - ✅ Paginación implementada en todos los listados
 - ✅ 71 Tests Unitarios (40 controllers + 31 services)
-- ✅ Deploy en Cloud de la DB
-- ✅ Servicios de AWS
+- ✅ Deploy en RDS de 2 Bases de Datos (una para desarrollo y otra para producción)
+- ✅ Deploy en Cloud de la API
 
 ---
 
