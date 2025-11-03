@@ -178,15 +178,23 @@ npm install
 
 ### 3. Configurar Variables de Entorno
 
-Crea un archivo `.env` en la raíz del proyecto: SOLICITAR EL ARCHIVO ENV PREVIAMENTE
+Crea un archivo `.env` en la raíz del proyecto: SOLICITAR DATOS A agustindanielchavero@gmail.com
 
 ```env
 # Database Configuration
-DB_HOST=
-DB_PORT=
-DB_USERNAME=
-DB_PASSWORD=
-DB_NAME=
+DB_HOST=localhost
+DB_PORT=3307
+DB_USERNAME=root
+DB_PASSWORD=123456
+DB_NAME=yugioh_db
+
+DB_CLOUD_HOST=SOLICITAR
+DB_CLOUD_PORT=SOLICITAR
+DB_CLOUD_USERNAME=SOLICITAR
+DB_CLOUD_PASSWORD=SOLICITAR
+DB_CLOUD_NAME=SOLICITAR
+
+BACKEND_DEPLOY_ROUTE=SOLICITAR
 ```
 
 ## ▶️ Ejecución del Proyecto
@@ -447,8 +455,8 @@ El proyecto sigue principios de **Clean Architecture**:
 
 - ✅ Paginación implementada en todos los listados
 - ✅ 71 Tests Unitarios (40 controllers + 31 services)
-- ⚠️ Deploy en Cloud (pendiente)
-- ⚠️ Servicios de AWS (pendiente)
+- ✅ Deploy en Cloud de la DB
+- ✅ Servicios de AWS
 
 ---
 
