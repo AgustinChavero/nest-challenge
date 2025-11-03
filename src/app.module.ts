@@ -17,11 +17,11 @@ import { ConfigModule } from '@nestjs/config';
     }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: process.env.DB_HOST,
-      port: +process.env.DB_PORT!,
-      username: process.env.DB_USERNAME,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
+      host: process.env.DB_CLOUD_HOST,
+      port: +process.env.DB_CLOUD_PORT!,
+      username: process.env.DB_CLOUD_USERNAME,
+      password: process.env.DB_CLOUD_PASSWORD,
+      database: process.env.DB_CLOUD_NAME,
       extra: {
         // Si falla en local, comentar todo esto
         ssl: {
