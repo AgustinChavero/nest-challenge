@@ -262,6 +262,11 @@ Incluye:
 - Queries de ejemplo
 - Índices recomendados
 
+**Aclaración:**
+
+- Se creó una base de datos para desarrollo **(credenciales cloud)** y otra para producción **(link de deploy para testeo en postman)**
+- En ambas bases de datos esta el seed ejecutado
+
 ### Colección de Postman
 
 📄 **[documentation/YuGiOh.postman_collection.json](./documentation/YuGiOh.postman_collection.json)**
