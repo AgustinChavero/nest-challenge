@@ -1,0 +1,333 @@
+{
+	"info": {
+		"_postman_id": "885cb8c3-b2b3-4d6a-a6c5-5b8042ef0a3e",
+		"name": "YuGiOh",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28603602"
+	},
+	"item": [
+		{
+			"name": "card-types",
+			"item": [
+				{
+					"name": "create-card-type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mágica\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/card-type",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"card-type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-card-types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/card-type",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"card-type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-card-type",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Monstruo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/card-type/aec05fe5-47a7-4a7f-8de0-aec4a7c9afbb",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"card-type",
+								"aec05fe5-47a7-4a7f-8de0-aec4a7c9afbb"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "card-sub-types",
+			"item": [
+				{
+					"name": "create-card-sub-type",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"card_type_id\": \"cb5e5e70-2f7f-4364-ad52-4ce60cf8d73b\",\r\n    \"name\": \"Juego Rápido\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/card-sub-type",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"card-sub-type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-card-sub-types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/card-sub-type",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"card-sub-type"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-card-sub-type",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Normal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/card-sub-type/57aa7b62-9810-4320-a372-ef344cb85cb1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"card-sub-type",
+								"57aa7b62-9810-4320-a372-ef344cb85cb1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cards",
+			"item": [
+				{
+					"name": "create-card",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Magican Cat\",\r\n  \"code\": \"MCM-005\",\r\n  \"description\": \"A basic magican cat\",\r\n  \"image_url\": \"https://example.com/reborn.jpg\",\r\n  \"card_type_id\": \"aec05fe5-47a7-4a7f-8de0-aec4a7c9afbb\",\r\n  \"card_sub_type_id\": \"57aa7b62-9810-4320-a372-ef344cb85cb1\",\r\n  \"statistics\": {\r\n    \"attack\": 1500,\r\n    \"defense\": 1100,\r\n    \"stars\": 3\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/card",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"card"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-cards",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/card?limit=10&offset=0&type_id=9cdc06d0-29e1-4809-9098-4d507a6e355c",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"card"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "type_id",
+									"value": "9cdc06d0-29e1-4809-9098-4d507a6e355c"
+								},
+								{
+									"key": "sub_type_id",
+									"value": "9ac470fe-9939-417c-8807-15d70a935b27",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Magican Cat",
+									"disabled": true
+								},
+								{
+									"key": "stars",
+									"value": "3",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-one-card",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/card/find?id=857131e6-518b-42b0-8ae8-6a32ef1b0645",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"card",
+								"find"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "857131e6-518b-42b0-8ae8-6a32ef1b0645"
+								},
+								{
+									"key": "name",
+									"value": "Legendary Warrior",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-card",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Legendary Warrior\",\r\n    \"code\": \"WAR-001\",\r\n    \"description\": \"A legendary warrior is ready for the battle\",\r\n    \"image_url\": \"https://example.com/legendary_warrior.jpg\",\r\n    \"statistics\": {\r\n        \"attack\": 3100,\r\n        \"defense\": 2100,\r\n        \"stars\": 6\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/card/857131e6-518b-42b0-8ae8-6a32ef1b0645",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"card",
+								"857131e6-518b-42b0-8ae8-6a32ef1b0645"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-card",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/card/857131e6-518b-42b0-8ae8-6a32ef1b0645",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"card",
+								"857131e6-518b-42b0-8ae8-6a32ef1b0645"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "seed",
+			"item": [
+				{
+					"name": "seed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/seed",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"seed"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
